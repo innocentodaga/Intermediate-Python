@@ -53,5 +53,32 @@ print(result==output)
 # v) if the number was not found, return -1
 
 # 4. Implement the solution and test it using example inputs, Fix bugs if any.
+def locate_card(cards, query):
+    # create a variable position wit the value 0
+    position = 0
+    
+    # set up a loop for repetition
+    while position < len(cards):
+        # check if element at the current position matches the query
+        if cards[position] == query:
+            # Answer found! Return and exit
+            return position
+        
+        # increment position if not found in the previous line
+        position = position + 1
+        
+        # check if we have reached the end of the array
+        if position == len(cards):
+            # number not found, return -1
+            return -1
 
+import testcases
+
+tesst = testcases.test
+print(tesst)
+
+result = locate_card(tesst['input']['cards'],  tesst['input']['query'])
+print(result)
+
+print(result == output)
 # 5. Analyze the algorithm's complexity and identify inefficiency. Repeat steps 3 to 6.
